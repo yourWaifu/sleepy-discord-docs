@@ -1,13 +1,13 @@
 module.exports = {
   title: 'Sleepy Discord',
   tagline: 'Documentation',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://yourwaifu.dev/',
+  baseUrl: '/sleepy-discord-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/title-icon.png',
   organizationName: 'yourWaifu', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  projectName: 'sleepy-discord-docs', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'Sleepy Discord',
@@ -44,9 +44,8 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/yourWaifu/sleepy-discord-docs/edit/master/',
+          //to do add edit button when update comes
+          showLastUpdateTime: true
         },
         blog: {
           showReadingTime: true,

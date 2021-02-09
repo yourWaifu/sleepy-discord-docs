@@ -31,6 +31,15 @@ module.exports = {
       'unicode',
     ],
     Tutorials: [],
-    Reference: referenceGen.getReferenceSidebarItems("docs/", "reference")
+    Reference: ["reference/index_classes", "reference/index_files", "reference/index_namespaces"]
   },
+  Reference: [
+    "reference/index_classes", "reference/index_files", "reference/index_namespaces",
+    {
+      type: 'category',
+      label: 'Full List',
+      items: referenceGen.getReferenceSidebarItems("docs/", "reference"),
+      collapsed: true,
+    }
+  ]
 };
