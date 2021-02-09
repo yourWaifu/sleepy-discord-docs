@@ -1,0 +1,9 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"sourceMap": true,
+		"module": "commonjs",
+		"moduleResolution": "node",
+	},
+	"include": ["reference-generator/*.ts"],
+}

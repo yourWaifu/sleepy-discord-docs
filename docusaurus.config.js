@@ -1,11 +1,11 @@
 module.exports = {
   title: 'Sleepy Discord',
-  tagline: 'The tagline of my site',
+  tagline: 'Documentation',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/title-icon.png',
   organizationName: 'yourWaifu', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {

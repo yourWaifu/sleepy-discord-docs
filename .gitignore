@@ -1,9 +1,13 @@
 # Dependencies
 /node_modules
 /xml
+doxybook2.exe
 
 # Production
 /build
+/docs/reference/*
+/reference-generator/*js
+/reference-generator/*.js.map
 
 # Generated files
 .docusaurus

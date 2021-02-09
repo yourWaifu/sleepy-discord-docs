@@ -7,11 +7,14 @@ This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern 
 ```console
 npm install
 yarn install
+npx tsc --p reference-generator-tsconfig.json
 ```
 
 ## Local Development
 
 ```console
+npx tsc
+.\doxybook2.exe --input .\xml --output .\docs\reference --config .\doxybook.config.json --templates templates\
 yarn start
 ```
 

@@ -1,3 +1,5 @@
+const referenceGen = require("./reference-generator"); 
+
 module.exports = {
   someSidebar: {
     "Getting Started": [
@@ -18,14 +20,17 @@ module.exports = {
         label: 'Building',
         items: [
           'generator-compile',
-          'common-build-errors',
         ]
       },
+      'common-build-errors',
     ],
     Topics: [
       'events',
       'requests',
       'voice',
+      'unicode',
     ],
+    Tutorials: [],
+    Reference: referenceGen.getReferenceSidebarItems("docs/", "reference")
   },
 };
