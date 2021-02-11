@@ -2,6 +2,7 @@
 title: Getting Started
 sidebar_label: Starting
 slug: /
+next: setup-standard
 ---
 
  1. You'll need to have a folder or directory for project. Make one if you don't have one.

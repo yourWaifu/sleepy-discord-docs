@@ -8,7 +8,7 @@ Request allow you to send and get data by requesting Discord to do something. Th
 
 ## Request Mode
 
-Request changes how the library handles the request. Mode is a enum and calculated using bitwise operations. For all available modes, you can find them in the header file client.h.
+Request changes how the library handles the request. Mode is a enum and calculated using bitwise operations. For all available modes, you can find them in [the header file client.h](/docs/reference/Files/client_8h#enum-requestmode).
 
 ```cpp
 sendMessage(sendMessageParams, SleepyDiscord::Async);
@@ -92,8 +92,16 @@ After making a request, a response object is returned. This can be an error, a o
 After a successful request, you'll want to get your data. There's multiple ways to do this.
 
 ### Implicit casting
-```cpp
+```
 SleepyDiscord::Message message = sendMessage(params);
+```
+```cpp
+auto messageResponse = sendMessage(params);
+SleepyDiscord::Message message = messageResponse;
+```
+```cpp
+SleepyDiscord::ObjectResponse<SleepyDiscord::Message> messageResponse = sendMessage(params);
+Message message = messageResponse;
 ```
 For Objects, Booleans, and Strings
 
@@ -101,6 +109,10 @@ For Objects, Booleans, and Strings
 ```cpp
 SleepyDiscord::Message message;
 sendMessage(params).cast(message);
+```
+```cpp
+if (sendMessage(params).cast(message))
+    //successful cast
 ```
 For Objects and returns true on success, could prevent a crash.
 
@@ -168,4 +180,4 @@ else
     //error
 ```
 
-This will depend on the request and only when a ``BoolResponse`` is returned. For ``ObjectResponses``, ``ThrowError`` flag in the ``RequestMode`` needs to be disabled. Checkout [Async](#async) and [Combining Modes Together](#combining-modes-together) for examples.
+This will depend on the request and only when a ``BoolResponse`` is returned. If you don't want any throws during the request, ``ThrowError`` flag in the ``RequestMode`` needs to be disabled. Checkout [Async](#async) and [Combining Modes Together](#combining-modes-together) for examples.

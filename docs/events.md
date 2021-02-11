@@ -6,7 +6,7 @@ Events are Discord Client member functions that can be overridden that are calle
 
 ## Usage
 
-This has the advantage of not needing to send a request for data, as such there's no worry for waiting for the response, dealing with rate limits, or possibility slowing down Discord. They are based on [Discord API's gateway events](https://discord.com/developers/docs/topics/gateway#commands-and-events-gateway-events). All events are declared in the header file client.h.
+This has the advantage of not needing to send a request for data, as such there's no worry for waiting for the response, dealing with rate limits, or possibility slowing down Discord. They are based on [Discord API's gateway events](https://discord.com/developers/docs/topics/gateway#commands-and-events-gateway-events). All events are declared in the header file client.h in [the BaseDiscordClient class](/docs/reference/Classes/class_sleepy_discord_1_1_base_discord_client#function-onready).
 
 ```cpp
 class MyClientClass : public SleepyDiscord::DiscordClient {

@@ -15,6 +15,7 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
+  --ifm-background-color: white;
 }
 
 .docusaurus-highlight-code-line {
@@ -22,4 +23,66 @@
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
+}
+
+@keyframes rotate {
+  from {-webkit-transform:rotate(0deg);}
+  to {  -webkit-transform:rotate(360deg);}
+}
+
+@-webkit-keyframes rotate {
+  from {-webkit-transform:rotate(0deg);}
+  to {  -webkit-transform:rotate(360deg);}
+}
+
+@-moz-keyframes rotate {
+  from {-moz-transform:rotate(0deg);}
+  to {  -moz-transform:rotate(360deg);}
+}
+
+.back-header {
+  position: fixed;
+  top: 50%; left: 50%;
+  z-index: -100;
+  background-position: center;
+  width: 200%;
+  height: 200%;
+
+  overflow: visible !important;
+}
+
+.back-header img {
+  animation-name: rotate;
+  animation-duration:360s;
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration:360s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function:linear;
+  -moz-animation-name: rotate;
+  -moz-animation-duration: 360s;
+  -moz-animation-iteration-count:infinite;
+  -moz-animation-timing-function:linear;
+}
+
+.front-page-content {
+  background-color: var(--ifm-background-color);
+  flex: 1 0 auto;
+}
+
+.front-header {
+  color: white;
+  flex: 0 0 auto;
+}
+
+.front-header .button {
+  color: white !important;
+}
+
+.vertical-flex {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 0 0 100% !important;
+  height: 100% !important;
 }

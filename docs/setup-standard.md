@@ -1,6 +1,7 @@
 ---
 title: Standard Configuration
 sidebar_label: Standard Configuration
+next: setup-standard-vs-cmake
 ---
 
 ## What You Need

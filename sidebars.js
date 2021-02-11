@@ -1,28 +1,22 @@
 const referenceGen = require("./reference-generator"); 
 
 module.exports = {
-  someSidebar: {
+  Docs: {
     "Getting Started": [
       'setup',
+      'setup-standard',
       {
         type: 'category',
-        label: 'Configuring',
+        label: 'Generate Configuration',
         items: [
-          'setup-standard',
           'setup-standard-gui',
           'setup-standard-vs-cmake',
           'setup-standard-cli',
         ]
       },
-      'only-sleepy-discord',
-      {
-        type: 'category',
-        label: 'Building',
-        items: [
-          'generator-compile',
-        ]
-      },
+      'generator-compile',
       'common-build-errors',
+      'only-sleepy-discord',
     ],
     Topics: [
       'events',

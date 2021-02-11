@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Sleepy Discord',
-  tagline: 'Documentation',
+  tagline: 'C++ library for Discord',
   url: 'https://yourwaifu.dev/',
   baseUrl: '/sleepy-discord-docs/',
   onBrokenLinks: 'throw',
@@ -25,16 +25,74 @@ module.exports = {
           label: 'GitHub',
           position: 'right',
         },
+        {
+          href: "https://discord.com/invite/5VDrVfK",
+          label: "Discord",
+          position: "right",
+        },
+        {
+          href: "https://github.com/sponsors/yourWaifu",
+          label: "Donate",
+          position: "right",
+        }
       ],
     },
     footer: {
       style: 'dark',
-      copyright: `${new Date().getFullYear()} Sleepy Discord Docs Built with Docusaurus.`,
+      links: [
+        {
+          title: "Docs",
+          items: [
+            {
+              label: "Topics",
+              to: "docs/events",
+            },
+            {
+              label: "Reference",
+              to: "docs/reference/index_classes"
+            }
+          ]
+        },
+        {
+          title: "More",
+          items: [
+            {
+              label: "GitHub",
+              to: "https://github.com/yourWaifu/sleepy-discord"
+            },
+            {
+              label: "Discord Server",
+              to: "https://discord.com/invite/5VDrVfK",
+            },
+            {
+              label: "Sponsor or Donate",
+              to: "https://github.com/sponsors/yourWaifu"
+            }
+          ]
+        },
+        {
+          title: "Credits",
+          items: [
+            {
+              label: `Built in ${new Date().getFullYear()} with Docusaurus and Doxybook2`,
+              to: "https://docusaurus.io/"
+            },
+            {
+              label: "Maintained By yourWaifu",
+              to: "https://yourwaifu.dev",
+            },
+            {
+              label: "Docs Git Repo",
+              to: "https://github.com/yourWaifu/sleepy-discord-docs",
+            }
+          ]
+        },
+      ]
     },
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
     hideableSidebar: true,
   },

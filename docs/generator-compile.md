@@ -1,5 +1,5 @@
 ---
-title: Compile
+title: Build
 ---
 
 Please click on the generator you used.
