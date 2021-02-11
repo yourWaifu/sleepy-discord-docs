@@ -39,8 +39,8 @@
 .back-header {
   z-index: -100;
   position: absolute;
-  width: 250%;
-  height: 250%;
+  width: 100vh;
+  height: 100vw;
   top: calc(50vh - var(--ifm-navbar-height));
   left: 50%;
   max-width: unset;
@@ -49,7 +49,8 @@
 }
 
 .back-header img {
-  width: 100%;
+  min-width: 200vw;
+  min-height: 180vh;
   max-width: unset;
   max-height: unset;
 
