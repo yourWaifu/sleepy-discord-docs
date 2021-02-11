@@ -61,7 +61,7 @@ function Home() {
           <div className="back-header">
             <img
               className="header-image"
-              src='/static/img/360-degree_Panorama_of_the_Southern_Sky_edit1high.jpg'
+              src='img/360-degree_Panorama_of_the_Southern_Sky_edit1high.jpg'
             ></img>
           </div>
           <div className="container">
