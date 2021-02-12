@@ -95,6 +95,10 @@ module.exports = {
       respectPrefersColorScheme: false,
     },
     hideableSidebar: true,
+    algolia: {
+      apiKey: 'aa64c0f51f119280e7f07594c58fb334',
+      indexName: 'sleepy-discord-docs',
+    }
   },
   presets: [
     [
