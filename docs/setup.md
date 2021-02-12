@@ -9,27 +9,26 @@ next: setup-standard
 
  2. In case you do not already have any source code, create a cpp file and copy and paste [this example code](https://github.com/yourWaifu/sleepy-discord/blob/master/examples/hello/example0.cpp).
 
- 3. If you haven't already installed git, do so now. Type in the command ``git --version`` to make sure it's installed. You may also use a git gui if you like.
+ 3. If you haven't already installed git, do so now. Type in the command ``git --version`` to make sure it's installed.
 
- 4. Clone the git repository, ``https://github.com/yourWaifu/sleepy-discord.git``, to somewhere around your source code, preferably a [subdirectory](https://en.wikipedia.org/wiki/Directory_(computing)) with all your dependencies.
+ 4. Create a new folder in your project's folder, call it ``deps``, short for dependencies. Go into the deps folder and clone the library's git repository, ``https://github.com/yourWaifu/sleepy-discord.git``, from there.
 
 ```shell
-cd my-project-example
+mkdir deps
+cd deps
 git clone https://github.com/yourWaifu/sleepy-discord.git
 ```
 
-Your folder should look something like this. You can have your source files or sleepy-discord in a subdirectory/folder if you like.
+Your folder should look something like this.
 
 ```shell
-- my-project
-  > sleepy-discord
-    source.cpp
+my-project
+├── deps
+│   └── sleepy-discord
+└── source.cpp
 ```
 
-## Choose Your Configuration
+## Go to the next page
 
 ### [Standard](setup-standard)
 Use Default configuration
-
-### [Only Sleepy Discord](only-sleepy-discord)
-Your own code or your own set of libraries is the configuration.

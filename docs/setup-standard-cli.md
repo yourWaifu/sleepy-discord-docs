@@ -21,12 +21,12 @@ Change current directory to the new build directory.
 cd build
 ```
 
-Choose a CMake Generator to use. [Here's a list of them](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html). In this example, we will use ``Visual Studio 15 2017 Win64``
+Choose a CMake Generator to use. [Here's a list of them](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html). In this example, we will use the default, so we'll keep it empty. The default is different depending on your system but it's likely ``make``.
 
 Generate build configuration files using CMake on the previous directory with your chosen CMake Generator.
 
 ```shell
-cmake .. -G "Visual Studio 15 2017" -A x64
+cmake ..
 ```
 
 * [Compile and Build](generator-compile)
