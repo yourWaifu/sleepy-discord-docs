@@ -18,6 +18,19 @@
   --ifm-background-color: white;
 }
 
+.menu__button {
+  --ifm-button-border-radius: 40px;
+  --ifm-button-background-color: unset !important;
+  box-shadow: 0 0 5px black;
+}
+
+.menu__button svg, .menu__button span {
+  fill: var(--ifm-font-color-base);
+  stroke: var(--ifm-font-color-base);
+  color: var(--ifm-font-color-base);
+  filter: drop-shadow( 0 0 3px var(--ifm-background-color));
+}
+
 html[data-theme=dark] {
   --ifm-alert-color: --ifm-font-color-base;
 }
