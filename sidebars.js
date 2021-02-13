@@ -23,6 +23,7 @@ module.exports = {
       'requests',
       'voice',
       'unicode',
+      'snowflake'
     ],
     Tutorials: [],
     Reference: ["reference/index_classes", "reference/index_files", "reference/index_namespaces"]

@@ -18,6 +18,46 @@
   --ifm-background-color: white;
 }
 
+html[data-theme=dark] {
+  --ifm-alert-color: --ifm-font-color-base;
+}
+
+html[data-theme=dark] .admonition {
+  --ra-admonition-icon-color: var(--ifm-font-color-base);
+}
+
+.admonition-icon {
+  margin-right: 0.5em;
+}
+
+html[data-theme=dark] .alert {
+  box-shadow: 0 0 6.18px var(--ifm-alert-border-color);
+  --ra-admonition-icon-color: var(--ifm-alert-border-color);
+  --ifm-alert-color: var(--ifm-alert-border-color);
+}
+
+html[data-theme=dark] .alert--secondary {
+  --ra-admonition-icon-color: var(--ifm-font-color-base);
+  --ifm-alert-color: --ifm-font-color-base;
+  --ifm-alert-background-color: unset
+}
+
+html[data-theme=dark] .alert--success {
+  --ifm-alert-background-color: unset;
+}
+
+html[data-theme=dark] .alert--info {
+  --ifm-alert-background-color: unset;
+}
+
+html[data-theme=dark] .alert--warning {
+  --ifm-alert-background-color: unset;
+}
+
+html[data-theme=dark] .alert--danger {
+  --ifm-alert-background-color: unset;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
