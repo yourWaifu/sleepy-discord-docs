@@ -8,13 +8,23 @@ This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern 
 npm install
 yarn install
 npx tsc --p reference-generator-tsconfig.json
+git clone https://github.com/yourWaifu/sleepy-discord.git
+cp Doxyfile sleepy-discord/
+cd sleepy-discord
+doxygen
+mv xml/* ../xml
+cd ..
+npx tsc
+.\doxybook2.exe --input .\xml --output .\docs\reference --config .\doxybook.config.json --templates templates\
 ```
+
+copy Doxyfile to sleepy-discord and run doxyfile.
+move the new xml folder to back to sleepy-discord-docs.
+download and run doxybook2
 
 ## Local Development
 
 ```console
-npx tsc
-.\doxybook2.exe --input .\xml --output .\docs\reference --config .\doxybook.config.json --templates templates\
 yarn start
 ```
 
