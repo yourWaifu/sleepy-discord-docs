@@ -57,7 +57,7 @@ target_link_libraries(replace-me sleepy-discord)
 
  3. Add these two lines to the CMakeList.txt so that Sleepy Discord will be linked.
 
- 4. If you are following the examples, you can skip this step. Otherwise, replace ``deps/sleepy-discord`` with the [relative path](https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths) to the sleepy-discord directory or folder relative to the ``CmakeLists.txt`` file. Windows users, remember to use ``/``.
+ 4. If you are following the examples, you can skip this step. Otherwise, replace ``deps/sleepy-discord`` with the [relative path](https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths) to the sleepy-discord directory folder relative to the ``CmakeLists.txt`` file. Windows users, remember to use ``/``.
 
 :::note
 In ``add_subdirectory``, using a directory that isn't a subdirectory to the current folder will require you to add a path to the binary folder for sleepy-discord as the 2nd parameter. It is recommended that you don't do this.
@@ -89,8 +89,7 @@ target_link_libraries(replace-me sleepy-discord)
 
 ```shell
 light-blob-bot
-├── deps
-│   └── sleepy-discord
+├── sleepy-discord
 ├── ui
 │   └── switch.cpp
 ├── material
@@ -111,7 +110,7 @@ add_executable(light-blob light.cpp blob.cpp
 main.cpp ui/switch.cpp
 material/metal.cpp material/plastic.cpp material/glass.cpp)
 
-add_subdirectory(deps/sleepy-discord)
+add_subdirectory(sleepy-discord)
 target_link_libraries(light-blob sleepy-discord)
 ```
 
