@@ -22,6 +22,7 @@
   --ifm-button-border-radius: 40px;
   --ifm-button-background-color: unset !important;
   box-shadow: 0 0 5px black;
+  --ifm-button-padding-horizontal: var(--ifm-button-padding-vertical);
 }
 
 .menu__button svg, .menu__button span {
