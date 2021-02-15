@@ -2,12 +2,12 @@ module.exports = {
   title: 'Sleepy Discord',
   tagline: 'C++ library for Discord',
   url: 'https://yourwaifu.dev/',
-  baseUrl: '/sleepy-discord-docs/',
+  baseUrl: '/sleepy-discord/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/title-icon.png',
   organizationName: 'yourWaifu', // Usually your GitHub org/user name.
-  projectName: 'sleepy-discord-docs', // Usually your repo name.
+  projectName: 'sleepy-discord', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'Sleepy Discord',
