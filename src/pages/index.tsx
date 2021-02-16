@@ -69,7 +69,6 @@ class Background extends React.Component {
   }
 
   handleLoaded() {
-    console.log(this.state.imageURL);
     if (this.state.imageURL === "img/Untitled.jpg") {
       window.setTimeout(() => {
         this.setState((state: BackgroundState, props) => {
@@ -116,7 +115,9 @@ function Home() {
       <div className="vertical-flex">
         <header className={clsx(styles.heroBanner, "front-header")}>
           <div className="back-header">
-          <LazyLoad height={4320} once>
+          <LazyLoad height={4320} once placeholder={
+            <img className="header-image blur4x" src="img/Untitled.jpg" height={4230} width={4230} />
+          }>
             <Background></Background>
           </LazyLoad>
           </div>
