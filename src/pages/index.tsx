@@ -74,24 +74,22 @@ class Background extends React.Component {
         this.setState((state: BackgroundState, props) => {
           return new BackgroundState("img/UntitledHigh.webp", state.blur);
         });
-      }, 1000);
+      }, 500);
     } else if (this.state.imageURL === "img/UntitledHigh.webp") {
-      window.setTimeout(()=> {
         this.setState((state, props) => {
           window.setTimeout(()=> {
             this.setState((state: BackgroundState, props) => {
               return new BackgroundState("img/360-degree_Panorama_of_the_Southern_Sky_edit.webp", state.blur);
             });
-          })
+          }, 500)
           return new BackgroundState(this.state.imageURL, false);
         });
-      });
     } else {
       window.setTimeout(()=> {
         this.setState((state: BackgroundState, props) => {
           return new BackgroundState("img/360-degree_Panorama_of_the_Southern_Sky_edit1high.webp", state.blur);
         });
-      });
+      }, 500);
     }
   }
 
