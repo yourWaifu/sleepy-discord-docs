@@ -51,6 +51,54 @@ function Feature({imageUrl = "", title, description}) {
   );
 }
 
+class BackgroundState {
+  constructor(
+    public imageURL: string,
+    public blur: boolean
+  ) {}
+}
+
+class Background extends React.Component {
+  state: BackgroundState;
+
+  constructor(props) {
+    super(props);
+
+    this.state = new BackgroundState("img/Untitled.jpg", true);
+    this.handleLoaded = this.handleLoaded.bind(this);
+  }
+
+  handleLoaded() {
+    console.log(this.state.imageURL);
+    if (this.state.imageURL === "img/Untitled.jpg") {
+      this.setState((state: BackgroundState, props) => {
+        return new BackgroundState("img/UntitledHigh.jpg", state.blur);
+      });
+    } else if (this.state.imageURL === "img/UntitledHigh.jpg") {
+      this.setState((state, props) => {
+        this.setState((state: BackgroundState, props) => {
+          return new BackgroundState("img/360-degree_Panorama_of_the_Southern_Sky_edit.jpg", state.blur);
+        });
+        return new BackgroundState(this.state.imageURL, false);
+      });
+    } else {
+      this.setState((state: BackgroundState, props) => {
+        return new BackgroundState("img/360-degree_Panorama_of_the_Southern_Sky_edit1high.jpg", state.blur);
+      });
+    }
+  }
+
+  render() {
+    return <img
+      className={clsx("header-image", this.state.blur ? "blur4x" : "unblur")}
+      src={this.state.imageURL}
+      onLoad={this.handleLoaded}
+      height={4230}
+      width={4230}
+    ></img>;
+  }
+}
+
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
@@ -60,11 +108,8 @@ function Home() {
       <div className="vertical-flex">
         <header className={clsx(styles.heroBanner, "front-header")}>
           <div className="back-header">
-          <LazyLoad height={4320} once placeholder={<div><img src="img/Untitled.jpg"/></div>}>
-            <img
-              className="header-image"
-              src='img/360-degree_Panorama_of_the_Southern_Sky_edit1high.jpg'
-            ></img>
+          <LazyLoad height={4320} once>
+            <Background></Background>
           </LazyLoad>
           </div>
           <div className="container">

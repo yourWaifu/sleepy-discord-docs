@@ -134,3 +134,13 @@ html[data-theme=dark] .alert--danger {
   flex: 0 0 100% !important;
   height: 100% !important;
 }
+
+.blur4x {
+  filter: blur(4px);
+  transition: 2s linear all;
+}
+
+.unblur {
+  filter: blur(0);
+  transition: 2s linear all;
+}
