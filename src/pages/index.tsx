@@ -71,19 +71,27 @@ class Background extends React.Component {
   handleLoaded() {
     console.log(this.state.imageURL);
     if (this.state.imageURL === "img/Untitled.jpg") {
-      this.setState((state: BackgroundState, props) => {
-        return new BackgroundState("img/UntitledHigh.jpg", state.blur);
-      });
-    } else if (this.state.imageURL === "img/UntitledHigh.jpg") {
-      this.setState((state, props) => {
+      window.setTimeout(() => {
         this.setState((state: BackgroundState, props) => {
-          return new BackgroundState("img/360-degree_Panorama_of_the_Southern_Sky_edit.jpg", state.blur);
+          return new BackgroundState("img/UntitledHigh.webp", state.blur);
         });
-        return new BackgroundState(this.state.imageURL, false);
+      }, 1000);
+    } else if (this.state.imageURL === "img/UntitledHigh.webp") {
+      window.setTimeout(()=> {
+        this.setState((state, props) => {
+          window.setTimeout(()=> {
+            this.setState((state: BackgroundState, props) => {
+              return new BackgroundState("img/360-degree_Panorama_of_the_Southern_Sky_edit.webp", state.blur);
+            });
+          })
+          return new BackgroundState(this.state.imageURL, false);
+        });
       });
     } else {
-      this.setState((state: BackgroundState, props) => {
-        return new BackgroundState("img/360-degree_Panorama_of_the_Southern_Sky_edit1high.jpg", state.blur);
+      window.setTimeout(()=> {
+        this.setState((state: BackgroundState, props) => {
+          return new BackgroundState("img/360-degree_Panorama_of_the_Southern_Sky_edit1high.webp", state.blur);
+        });
       });
     }
   }
