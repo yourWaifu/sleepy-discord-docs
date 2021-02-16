@@ -60,10 +60,12 @@ function Home() {
       <div className="vertical-flex">
         <header className={clsx(styles.heroBanner, "front-header")}>
           <div className="back-header">
+          <LazyLoad height={4320} once placeholder={<div><img src="img/Untitled.jpg"/></div>}>
             <img
               className="header-image"
               src='img/360-degree_Panorama_of_the_Southern_Sky_edit1high.jpg'
             ></img>
+          </LazyLoad>
           </div>
           <div className="container">
             <h1 className="hero__title">{siteConfig.title}</h1>
