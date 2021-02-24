@@ -25,8 +25,8 @@ jobs:
           echo "Run Doxygen"
           doxygen
           echo "Move Doxygen Files"
-          mkdir sleepy-discord/xml
-          mv xml/* sleepy-discord/xml
+          mkdir ../xml
+          mv xml/* ../xml
           echo "Download Doxybook2"
           cd ..
           curl -o doxybook2.zip -LO "https://github.com/matusnovak/doxybook2/releases/download/v1.3.3/doxybook2-linux-amd64-v1.3.3.zip"
@@ -77,8 +77,8 @@ jobs:
           echo "Run Doxygen"
           doxygen
           echo "Move Doxygen Files"
-          mkdir sleepy-discord/xml
-          mv xml/* sleepy-discord/xml
+          mkdir ../xml
+          mv xml/* ../xml
           echo "Download Doxybook2"
           cd ..
           curl -o doxybook2.zip -LO "https://github.com/matusnovak/doxybook2/releases/download/v1.3.3/doxybook2-linux-amd64-v1.3.3.zip"
