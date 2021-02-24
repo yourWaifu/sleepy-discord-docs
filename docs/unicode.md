@@ -15,7 +15,7 @@ std::string foo = u8"語";
 sendMessage(channelID, u8"語");
 ```
 
-C++'s escape sequences also work, you'll want to look up the code for each character on a Unicode Character table.
+If you want to use ASCII in your source files, C++'s escape sequences also work. You'll want to look up the code for each character on a Unicode Character table.
 
 Unicode code points
 ```cpp
