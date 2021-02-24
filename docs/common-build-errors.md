@@ -45,3 +45,17 @@ Usually this means, that something went wrong with the download for one of the l
 ```
 
 This error only happens on windows as on Unix, make is used to compile libSodium but on windows things are a bit different. However, you can install libSodium using the unofficial sodium package from VCPKG.
+
+## 4004 Authentication failed.
+
+```console
+Error 4004: authentication failed - The account token sent with your identify payload is incorrect.
+```
+
+Take a look at this example:
+
+```cpp
+Client client("token", SleepyDiscord::USER_CONTROLED_THREADS);
+```
+
+The ``"token"`` isn't a valid token. As such, Discord can't identify the account you like to use. Please go to [the Discord API Docs on how to get a valid token](https://discord.com/developers/docs/reference#authentication).
