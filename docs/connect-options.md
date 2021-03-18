@@ -6,7 +6,7 @@ Changes how the realtime 2 way connection between the client and Discord's Gatew
 
 ## Gateway Version
 
-You can set this by switching between different Git branches of the library's repo. You can't set the gateway version using code as the library doesn't account for differences between version. For versions that Discord supports, check out [the Discord API docs](https://discord.com/developers/docs/topics/gateway#gateway-intents). For Git branches of this library, check out [the GitHub repo](https://github.com/yourWaifu/sleepy-discord/branches).
+You can set this by switching between different Git branches of the library's repo. You can't set the gateway version using code as the library doesn't account for differences between version. For versions that Discord supports, check out [the Discord API docs](https://discord.com/developers/docs/topics/gateway#gateways-gateway-versions). For Git branches of this library, check out [the GitHub repo](https://github.com/yourWaifu/sleepy-discord/branches).
 
 ## Intents
 
@@ -39,7 +39,7 @@ client.run(); //call setIntents before calling run
 
 ## Compression
 
-Makes Discord send Zlib compressed WebSockets to save bandwidth but with a cost, CPU and some RAM at runtime.
+Makes Discord send Zlib compressed WebSockets to save bandwidth but with a cost, CPU and some RAM at runtime. In most situations, this might be worth turning on.
 
 :::note
 

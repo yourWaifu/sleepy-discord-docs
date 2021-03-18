@@ -23,6 +23,7 @@
   --ifm-button-background-color: unset !important;
   box-shadow: 0 0 5px black;
   --ifm-button-padding-horizontal: var(--ifm-button-padding-vertical);
+  backdrop-filter: blur(1.0px);
 }
 
 .menu__button svg, .menu__button span {
@@ -126,6 +127,7 @@ html[data-theme=dark] .alert--danger {
 
 .front-header .button {
   color: white !important;
+  backdrop-filter: blur(3px);
 }
 
 .vertical-flex {
@@ -143,4 +145,12 @@ html[data-theme=dark] .alert--danger {
 .unblur {
   filter: blur(0);
   transition: 2s linear all;
+}
+
+.navbar-sidebar {
+  box-shadow: none;
+}
+
+.navbar-sidebar--show .navbar-sidebar {
+  box-shadow: var(--ifm-global-shadow-md);
 }

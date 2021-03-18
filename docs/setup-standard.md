@@ -119,8 +119,8 @@ target_link_libraries(light-blob sleepy-discord)
 Choose your CMake Interface.
 
 ### Recommendation for Windows Users
- * [Visual Studio CMake](setup-standard-vs-cmake)
+ * [Visual Studio CMake](./setup-standard-vs-cmake)
 
 ### Any OS
- * [CMake App (GUI)](setup-standard-gui)
- * [CMake Command (CLI)](setup-standard-cli)
+ * [CMake App (GUI)](./setup-standard-gui)
+ * [CMake Command (CLI)](./setup-standard-cli)
