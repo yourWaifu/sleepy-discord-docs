@@ -9,7 +9,7 @@ next: setup-standard-vs-cmake
  * [CMake](https://cmake.org/download/)
    * Can be installed using Visual Studio installer, Cmake's website, or your package manager
  * OpenSSL library
-   * For Windows users, you can [Download and use the installer (Don't download the light version or you'll run into errors)](https://slproweb.com/products/Win32OpenSSL.html) or any other binaries [found here](https://wiki.openssl.org/index.php/Binaries) or [via a simple google search](https://www.google.com/search?q=openssl+windows+precompiled).
+   * For Windows users, you can install it using [VCPKG](https://github.com/microsoft/vcpkg#quick-start-windows) and the command ``.\vcpkg\vcpkg install openssl:x64-windows`` or ``.\vcpkg\vcpkg install openssl:x86-windows``.
    * For Linux users, use your package manager and install libssl-dev or openssl-devel. The name depends on your package manager.
  * A C++ Compiler
    * [Go here for build status](https://github.com/yourWaifu/sleepy-discord#build-status).

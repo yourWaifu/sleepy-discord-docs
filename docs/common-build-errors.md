@@ -22,6 +22,18 @@ Tell CMake where to find the compiler by setting either the environment variable
 
 Usually this means you don't have a compiler installed. GCC, Clang, or MSVC are recommend. You can check if you have them installed by run the compiler's command in the terminal. If you have a compiler installed, set the environment variable ``CXX`` to the command for the C++ compiler or the path to the C++ compiler.
 
+## Could NOT find OpenSSL, ...
+
+```console
+Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the
+system variable OPENSSL_ROOT_DIR (missing: OPENSSL_CRYPTO_LIBRARY
+OPENSSL_INCLUDE_DIR)
+```
+
+If you haven't installed OpenSSL, please do so, [as instructed in the setup guide](/docs/setup-standard#what-you-need). If you used VCPKG to install openSSL, set the CMake toolchain file setting in your CMake Interface. You can set this using Command Arguments. Or in Visual Studio with CMake, this setting is in the CMake Settings Menu.
+
+If you are still getting this error, find where openSSL is installed and go to your CMake Settings to set the CMake variable ``OPENSSL_ROOT_DIR`` to the absolute path to that folder. Make sure that if you are compiling for x86 that you are pointing to folder with the x86 version, the same goes for all CPUs. Make sure that this folder has a ``include`` folder and a ``lib`` folder, because overwise, it's a sign that you have the wrong version. For VCPKG, this should be ``vcpkg\installed\x86-windows`` or ``vcpkg\installed\x64-windows``. It can also be in ``C:\OpenSSL-Win32`` or ``C:\Program Files\OpenSSL-Win64``.
+
 ### sleepy-discord/CMakeLists.txt (add_subdirectory)
 
 ```console
