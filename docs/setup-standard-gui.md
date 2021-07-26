@@ -17,7 +17,11 @@ includes:
 
  7. Select the generator you want to use. For example, if you want to use Visual Studio 2017 and compile for 64 bit Windows, use ``Visual Studio 15 2017 Win64``.
 
- 8. Select ``Use default native compilers`` and click ``Finish``.
+ 8. 
+  * If you used VCPKG, do the following:
+    * Select ``Specify toolchain file`` and click ``Next``. Enter ``enter [path to vcpkg]/scripts/buildsystems/vcpkg.cmake`` with ``[path to vcpkg]`` replaced and click ``Finish``.
+  * Otherwise, do the following:
+    * Select ``Use default native compilers`` and click ``Finish``.
 
  9. Wait until it's done. You can tell when it says ``Generating done`` at the bottom.
 
