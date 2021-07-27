@@ -35,16 +35,30 @@ The Snowflake stores it's data in a string that you can cast to. You can also ge
 ```cpp
 std::string ID = messageID; //implicit
 std::string ID = messagesID.string();
-int64_t ID = messageID.number();
 ```
+
+### Number
+
+```cpp
+int64_t ID = messageID.number(); // throws if empty
+```
+
+:::note
+When using .number() or .timestamp(), make sure that snowflake isn't empty first or the library will throw an exception.
+:::
 
 ## Timestamp
 
 Snowflakes contains some data that tells you when an object was create, and the worker and process that created it. The time is what's useful tho, so the library can extract this data for you.
 
 ```cpp
-std::chrono::time_point<std::chrono::steady_clock> birth = messageID.timestamp();
+```cpp
+std::chrono::time_point<std::chrono::steady_clock> birth = messageID.timestamp(); // throws if ID is empty
 ```
+
+:::note
+When using .number() or .timestamp(), make sure that snowflake isn't empty first or you'll get an error.
+:::
 
 ## Equality == 
 
