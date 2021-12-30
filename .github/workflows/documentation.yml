@@ -20,6 +20,7 @@ jobs:
       - name: set up site
         run: |
           git clone https://github.com/yourWaifu/sleepy-discord.git
+          git checkout develop
           cp Doxyfile sleepy-discord/
           cd sleepy-discord
           echo "Run Doxygen"
@@ -72,6 +73,7 @@ jobs:
       - name: set up site
         run: |
           git clone https://github.com/yourWaifu/sleepy-discord.git
+          git checkout develop
           cp Doxyfile sleepy-discord/
           cd sleepy-discord
           echo "Run Doxygen"
