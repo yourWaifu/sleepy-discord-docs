@@ -20,9 +20,9 @@ jobs:
       - name: set up site
         run: |
           git clone https://github.com/yourWaifu/sleepy-discord.git
-          git checkout develop
-          cp Doxyfile sleepy-discord/
           cd sleepy-discord
+          git checkout develop
+          cp ../Doxyfile ./
           echo "Run Doxygen"
           doxygen
           echo "Move Doxygen Files"
