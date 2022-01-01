@@ -24,7 +24,8 @@ module.exports = {
       'voice',
       'unicode',
       'snowflake',
-      'connect-options'
+      'connect-options',
+      'slash-commands'
     ],
     Tutorials: [],
     Reference: ["reference/index_classes", "reference/index_files", "reference/index_namespaces"]
