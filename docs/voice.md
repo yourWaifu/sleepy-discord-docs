@@ -147,3 +147,7 @@ void onEndSpeaking(SleepyDiscord::VoiceConnection& connection) {
 ```
 
 There are a few ways to disconnect, the simplest being calling ``VoiceConnection::disconnect``. You can also disconnect with a VoiceContext or channelID by using ``BaseDiscordClient::disconnectVoiceContext`` or ``BaseDiscordClient:disconnectFromVoiceChannel``.
+
+## Voice State Management
+
+Using voice states, you can info about the state of users in voice chat. This data includes the joining and leaving of voice channels, deaf, mute, etc. You can keep track of voice states via the ``onEditVoiceState`` event on your Discord Client and ``server.voiceStates`` during the ``onServer`` event.
