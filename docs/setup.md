@@ -30,5 +30,5 @@ my-project
 
 ## Go to the next page
 
-### [Standard](setup-standard)
+### [Standard](setup-standard.md)
 Use Default configuration

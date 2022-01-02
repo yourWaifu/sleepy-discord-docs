@@ -41,13 +41,13 @@ Names for commands, values, and choices have a character limit and don't allow s
 void onInteraction(SleepyDiscord::Interaction interaction) override {
     if (interaction.data.name == "hello") {
         SleepyDiscord::Interaction::Response<> response;
-        response.type = SleepyDiscord::Interaction::Response::Type::ChannelMessageWithSource;
+        response.type = SleepyDiscord::InteractionCallbackType::ChannelMessageWithSource;
         response.data.content = "hello";
         client.createInteractionResponse(interaction.ID, interaction.token, response);
     } else {
         //not found
         SleepyDiscord::Interaction::Response<> response;
-        response.type = SleepyDiscord::Interaction::Response::Type::ChannelMessageWithSource;
+        response.type = SleepyDiscord::InteractionCallbackType::ChannelMessageWithSource;
         response.data.content = "Couldn't find command";
         response.data.flags = SleepyDiscord::InteractionAppCommandCallbackData::Flags::Ephemeral; //only for the user to see
         createInteractionResponse(interaction, interaction.token, response);
@@ -158,7 +158,7 @@ Adding choices requires setting with a type and a value. It's recommended that y
 To response to choices, it's the same as responding to the option like earlier but look out for the values that were set in your choices.
 
 :::warning
-The choices limit is 25, try auto complete if you are going over that limit
+The choices limit is 25, try autocomplete if you are going over that limit
 :::
 
 ## Autocomplete

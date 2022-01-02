@@ -1,4 +1,4 @@
 {
-    "linkSuffix": "",
-    "baseUrl": "/docs/reference/"
+    "linkSuffix": ".md",
+    "baseUrl": "/reference/"
 }

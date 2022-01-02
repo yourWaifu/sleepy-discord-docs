@@ -6,6 +6,7 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/title-icon.png',
+  trailingSlash: false,
   organizationName: 'yourWaifu', // Usually your GitHub org/user name.
   projectName: 'sleepy-discord', // Usually your repo name.
   themeConfig: {
