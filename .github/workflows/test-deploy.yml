@@ -42,5 +42,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Test build website
-        run: yarn build
+        run: |
+          npx tsc --p reference-generator-tsconfig.json
+          yarn build
 
