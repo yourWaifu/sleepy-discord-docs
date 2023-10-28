@@ -7,7 +7,7 @@ next: setup-standard
 
  1. You'll need to have a folder or directory for project. Make one if you don't have one.
 
- 2. In case you do not already have any source code, create a cpp file and copy and paste [this example code](https://github.com/yourWaifu/sleepy-discord/blob/master/examples/hello/example0.cpp).
+ 2. In case you do not already have any source code, create a cpp file and copy and paste [this example code for master version](https://github.com/yourWaifu/sleepy-discord/blob/master/examples/hello/example0.cpp) and [this example for develop version](https://github.com/yourWaifu/sleepy-discord/blob/develop/examples/hello/example0.cpp).
 
  3. If you haven't already installed git, do so now. Type in the command ``git --version`` to make sure it's installed.
 
@@ -27,6 +27,12 @@ my-project
 │   └── sleepy-discord
 └── source.cpp
 ```
+
+:::note
+
+Master version uses API version 8 and Develop version uses API version 10.
+
+:::
 
 ## Go to the next page
 
