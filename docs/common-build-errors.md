@@ -30,7 +30,11 @@ system variable OPENSSL_ROOT_DIR (missing: OPENSSL_CRYPTO_LIBRARY
 OPENSSL_INCLUDE_DIR)
 ```
 
-If you haven't installed OpenSSL, please do so, [as instructed in the setup guide](/docs/setup-standard#what-you-need). If you used VCPKG to install openSSL, set the CMake toolchain file setting in your CMake Interface. You can set this using Command Arguments. Or in Visual Studio with CMake, this setting is in the CMake Settings Menu.
+If you haven't installed OpenSSL, please do so, [as instructed in the setup guide](/docs/setup-standard#what-you-need). If you used VCPKG to install openSSL, make sure you installed the variable for the platform and CPU you want to use. For example, Windows 64 bit is ``openssl:x64-windows``. Also, set the CMake toolchain file setting in your CMake Interface to the following path
+```console
+[path to vcpkg]/scripts/buildsystems/vcpkg.cmake
+```
+You can set this using Command Arguments with ``-DCMAKE_TOOLCHAIN_FILE=``, Or in Visual Studio with CMake, this setting is in the CMake Settings Menu with the name, CMake Toolchain file. You can open your CMake Settings by right clicking your CMakeLists.txt in the Solution Explorer, and clicking CMake Settings.
 
 If you are still getting this error, find where openSSL is installed and go to your CMake Settings to set the CMake variable ``OPENSSL_ROOT_DIR`` to the absolute path to that folder. Make sure that if you are compiling for x86 that you are pointing to folder with the x86 version, the same goes for all CPUs. Make sure that this folder has a ``include`` folder and a ``lib`` folder, because overwise, it's a sign that you have the wrong version. For VCPKG, this should be ``vcpkg\installed\x86-windows`` or ``vcpkg\installed\x64-windows``. It can also be in ``C:\OpenSSL-Win32`` or ``C:\Program Files\OpenSSL-Win64``.
 

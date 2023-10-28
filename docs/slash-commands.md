@@ -7,7 +7,7 @@ Using slash commands, you can have commands without the need of read messages in
 :::note
 Slash Commands are only available in the develop branch.
 Many features have not been implemented yet.
-Slash Commands is still being worked on. The main parts of slash commands is finished but many new features like localisation, attachment option types, and permissions are still being worked on.
+Slash Commands are still being worked on. The main parts of slash commands are finished but many new features like localization, attachment option types, and permissions are still being worked on.
 :::
 
 ## Add Commands
@@ -57,7 +57,7 @@ void onInteraction(SleepyDiscord::Interaction interaction) override {
 ```
 
 When a user uses a command, the bot will hear about it in the ``onInteraction`` event. The interaction's data object will have the name of the command that was used.
-The bot should create a Interaction Response, with a type and content. After that, the bot sents a Create Interaction Response request, using the interaction's ID, and token.
+The bot should create a Interaction Response, with a type and content. After that, the bot sends a Create Interaction Response request, using the interaction's ID, and token.
 
 ## Adding Options
 
@@ -86,11 +86,11 @@ createGlobalAppCommand(getID(), name, description, std::move(options));
 When creating the list of the options, you'll need to create a ``SleepyDiscord::AppCommand::Option`` for each option and move that into the options.
 The required data is type, name, and description. The type needs to be a value in the ``SleepyDiscord::AppCommand::Option::Type`` enum. You can use ``SleepyDiscord::AppCommand::Option::TypeHelper`` to get the type for things like string, int, and bool.
 There are some more advanced useful types like ``SleepyDiscord::AppCommand::Option::Type::MENTIONABLE``, ``SleepyDiscord::AppCommand::Option::SUB_COMMAND``, and ``SleepyDiscord::AppCommand::Option::SUB_COMMAND_GROUP``.
-Another important thing about Options is that they can't easily be copied because the Choices in Options can't be copied but they can easily be moved with ``std::move``.
+Another important thing about Options is that they can't easily be copied because the Choices in Options can't be copied, but they can easily be moved with ``std::move``.
 
 ## Responding to Options
 
-There's more then one way to handle this that comes with different pros and cons.
+There's more than one way to handle this, that comes with different pros and cons.
 
 ```cpp
 void onInteraction(SleepyDiscord::Interaction interaction) override {
@@ -127,7 +127,7 @@ void onInteraction(SleepyDiscord::Interaction interaction) override {
 }
 ```
 
-Mainly different ways to error check that parsing the json data didn't run into issues. Since we don't know exactly what the type is, it's recommended to use matching types but there is still a possibility for errors during parsing.
+Mainly different ways to error check that parsing the JSON data didn't run into issues. Since we don't know exactly what the type is, it's recommended to use matching types, but there is still a possibility for errors during parsing.
 
 ## Adding Choices
 
@@ -155,7 +155,7 @@ iceCream.choices.push_back(std::move(mixed));
 
 Adding choices requires setting with a type and a value. It's recommended that you use matching types.
 
-To response to choices, it's the same as responding to the option like earlier but look out for the values that were set in your choices.
+To respond to choices, it's the same as responding to the option like earlier but look out for the values that were set in your choices.
 
 :::warning
 The choices limit is 25, try autocomplete if you are going over that limit
@@ -185,6 +185,7 @@ void onInteraction(SleepyDiscord::Interaction interaction) override {
             extraE.name = "E";
             extraE.set<std::string>(query + "e");
             response.data.choices.push_back(std::move(extraE));
+            client.createInteractionResponse(interaction.ID, interaction.token, response);
         } catch (...) {
             //fail
         }
@@ -194,4 +195,48 @@ void onInteraction(SleepyDiscord::Interaction interaction) override {
 }
 ```
 
-Using autocomplete, your bot can set the choices dynamically as the user types their command. You need to set an option without any choices to allow autocomplete by setting  ``option.autocomplete`` to true. After that, the bot needs to respond to the options as the user types with a list of choices using a ``Interaction::AutocompleteResponse``. You can also tell when the user is typing with autocomplete using ``interaction.type``.
+Using autocomplete, your bot can set the choices dynamically as the user types their command. You need to set an option without any choices to allow autocomplete by setting  ``option.autocomplete`` to true. After that, the bot needs to respond to the options as the user types with a list of choices using an ``Interaction::AutocompleteResponse``. You can also tell when the user is typing with autocomplete using ``interaction.type``.
+
+## Context Menus
+
+There's 2 forms of commands that use context menus, user commands and message commands.
+
+```cpp
+const std::string name = "star";
+const std::string description = "add a star a message";
+const bool defaultPermissions = true;
+//The type needs to be set to message
+const SleepyDiscord::AppCommand::Type type = SleepyDiscord::AppCommand::Type::MESSAGE;
+
+client.createGlobalAppCommand(getID(), name, description,
+    SleepyDiscord::AppCommand::emptyOptions, defaultPermissions, type);
+```
+
+```cpp title="Responding to Message Commands"
+void onInteraction(SleepyDiscord::Interaction interaction) override {
+    if (interaction.data.name != "star")
+        return; //not found
+
+    SleepyDiscord::Message message;
+    if (!interaction.data.resolved.messages.find(interaction.data.targetID, message)) {
+        return; //fail
+    }
+    // use message to get required data
+    message.content;
+}
+
+//or
+void onInteraction(SleepyDiscord::Interaction interaction) override {
+    if (interaction.data.name != "star")
+        return; //not found
+        
+    auto iterator = interaction.data.resolved.messages.find(interaction.data.targetID);
+    if (iterator == interaction.data.resolved.messages.end()) {
+        return; //fail
+    }
+    SleepyDiscord::Message message = iterator->value;
+}
+```
+
+These types of commands do not contain any options and instead get parameters via ``interaction.data.resolved``. Which contains the objects that are selected or in other objects related to the target, ``interaction.data.targetID``. For example, if someone is mentioned in a message, you can find that user's User object in ``interaction.data.resolved.users``.
+

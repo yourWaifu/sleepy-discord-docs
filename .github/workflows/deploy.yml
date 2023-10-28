@@ -21,6 +21,40 @@ jobs:
           node-version: 18
           cache: yarn
 
+      - name: Add key to allow access to repository
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          echo "${{ secrets.GH_PAGES_DEPLOY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          cat <<EOT >> ~/.ssh/config
+          Host github.com
+          HostName github.com
+          IdentityFile ~/.ssh/id_ed25519
+          EOT
+      - name: install dependency packages
+        run: sudo apt install -y doxygen
+      - name: set up site
+        run: |
+          git clone https://github.com/yourWaifu/sleepy-discord.git
+          cd sleepy-discord
+          git checkout develop
+          cp ../Doxyfile ./
+          echo "Run Doxygen"
+          doxygen
+          echo "Move Doxygen Files"
+          mkdir ../xml
+          mv xml/* ../xml
+          echo "Download Doxybook2"
+          cd ..
+          curl -o doxybook2.zip -LO "https://github.com/matusnovak/doxybook2/releases/download/v1.3.3/doxybook2-linux-amd64-v1.3.3.zip"
+          unzip -j "doxybook2.zip" "bin/doxybook2" -d "."
+          echo "Run Doxybook2"
+          mkdir docs/reference
+          ./doxybook2 --input ./xml --output ./docs/reference --config ./doxybook.config.json --templates templates/
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build website
