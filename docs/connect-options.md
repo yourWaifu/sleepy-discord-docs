@@ -14,7 +14,7 @@ Filters what information Discord sends to the client. [Click here for a list of 
 
 :::important
 
-Required for v8 and up
+Required for v8 and up. message content intent is required for v10 and up.
 
 :::
 
@@ -22,6 +22,7 @@ Required for v8 and up
 Client client("token", SleepyDiscord::USER_CONTROLED_THREADS);
 auto intentsList = {
     SleepyDiscord::Intent::SERVER_MESSAGES,	//required for commands via messages
+    SleepyDiscord::Intent::MESSAGE_CONTENT, // also required for commands via messages
     SleepyDiscord::Intent::SERVER_VOICE_STATES, //required for connecting to voice
 };
 client.setIntents(intentsList);
@@ -32,6 +33,7 @@ client.run(); //call setIntents before calling run
 Client client("token", SleepyDiscord::USER_CONTROLED_THREADS);
 client.setIntents(
     SleepyDiscord::Intent::SERVER_MESSAGES,
+    SleepyDiscord::Intent::MESSAGE_CONTENT,
     SleepyDiscord::Intent::SERVER_VOICE_STATES
 );
 client.run(); //call setIntents before calling run

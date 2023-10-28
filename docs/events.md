@@ -21,7 +21,7 @@ public:
 int main() {
 	MyClientClass client("token", SleepyDiscord::USER_CONTROLED_THREADS);
     //tell Discord to send use message events
-	client.setIntents(SleepyDiscord::Intent::SERVER_MESSAGES);
+	client.setIntents(SleepyDiscord::Intent::SERVER_MESSAGES, SleepyDiscord::Intent::MESSAGE_CONTENT);
 	client.run();
 }
 ```
