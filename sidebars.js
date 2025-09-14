@@ -27,10 +27,10 @@ module.exports = {
       'connect-options',
       'slash-commands'
     ],
-    Tutorials: [],
-    Reference: ["reference/index_classes", "reference/index_files", "reference/index_namespaces"]
+    //Tutorials: [],
+    //Reference: ["reference/index_classes", "reference/index_files", "reference/index_namespaces"]
   },
-  Reference: [
+  /*Reference: [
     "reference/index_classes", "reference/index_files", "reference/index_namespaces",
     {
       type: 'category',
@@ -38,5 +38,5 @@ module.exports = {
       items: referenceGen.getReferenceSidebarItems("docs/", "reference"),
       collapsed: true,
     }
-  ]
+  ]*/
 };

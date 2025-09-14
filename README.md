@@ -20,7 +20,7 @@ mkdir docs/reference
 npm install
 yarn install
 npx tsc --p reference-generator-tsconfig.json
-npx tsc
+yarn run build
 ```
 
 If you can't run the doxygen command but have Doxygen installed, you can use the GUI and open the ``doxyfile`` file in the ``sleepy-discord`` directory.

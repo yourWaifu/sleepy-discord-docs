@@ -1,9 +1,8 @@
 {
+	"extends": "@docusaurus/tsconfig",
 	"compilerOptions": {
-		"target": "es6",
 		"sourceMap": true,
-		"module": "commonjs",
-		"moduleResolution": "node",
+		"moduleResolution": "node"
 	},
-	"include": ["reference-generator/*.ts"],
+	"include": ["reference-generator/*.ts"]
 }
