@@ -8,7 +8,7 @@ Request allow you to send and get data by requesting Discord to do something. Th
 
 ## Request Mode
 
-Request changes how the library handles the request. Mode is a enum and calculated using bitwise operations. For all available modes, you can find them in [the header file client.h](/docs/reference/Files/client_8h#enum-requestmode).
+Request changes how the library handles the request. Mode is a enum and calculated using bitwise operations. For all available modes, you can find them in [the header file client.h](api).
 
 ```cpp
 sendMessage(sendMessageParams, SleepyDiscord::Async);

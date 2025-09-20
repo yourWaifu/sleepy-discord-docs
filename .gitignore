@@ -1,12 +1,11 @@
 # Dependencies
 /node_modules
 /xml
-doxybook2.exe
 /sleepy-discord
 
 # Production
 /build
-/docs/reference/*
+/docs/api.md
 /reference-generator/*js
 /reference-generator/*.js.map
 

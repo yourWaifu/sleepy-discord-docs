@@ -5,7 +5,6 @@ This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern 
 ## Installation
 
 Install doxygen from their website or your package manager.
-Download doxybook2 and place ``doxybook2.exe`` or ``doxybook2`` in this folder.
 
 ```console
 git clone https://github.com/yourWaifu/sleepy-discord.git
@@ -16,9 +15,9 @@ mkdir ../xml
 mv xml/* ../xml
 cd ..
 mkdir docs/reference
-.\doxybook2.exe --input .\xml --output .\docs\reference --config .\doxybook.config.json --templates templates\
 npm install
 yarn install
+npx moxygen -o docs/api.md ./xml/
 npx tsc --p reference-generator-tsconfig.json
 yarn run build
 ```

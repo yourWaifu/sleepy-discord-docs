@@ -10,7 +10,7 @@ You can set this by switching between different Git branches of the library's re
 
 ## Intents
 
-Filters what information Discord sends to the client. [Click here for a list of available Intents](reference/Files/client_8h/#enum-intent).
+Filters what information Discord sends to the client. A list of Intents can be found on Discord docs.
 
 :::important
 

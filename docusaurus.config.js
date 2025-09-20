@@ -50,7 +50,7 @@ export default {
             },
             {
               label: "Reference",
-              to: "docs/reference/index_classes"
+              to: "docs/api"
             }
           ]
         },
@@ -75,7 +75,7 @@ export default {
           title: "Credits",
           items: [
             {
-              label: `Built in ${new Date().getFullYear()} with Docusaurus and Doxybook2`,
+              label: `Built in ${new Date().getFullYear()} with Docusaurus and Moxygen`,
               to: "https://docusaurus.io/"
             },
             {
