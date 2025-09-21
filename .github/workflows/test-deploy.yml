@@ -38,6 +38,7 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Test build website
         run: |
+          npx moxygen --groups -o docs/api.md ./xml/
           npx tsc --p reference-generator-tsconfig.json
           yarn build
 
