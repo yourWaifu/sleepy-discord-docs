@@ -1,4 +1,4 @@
-import React from "react";
+import React, { JSX } from "react";
 import { Redirect } from 'react-router-dom';
 
 function RedirectToDocs(): JSX.Element {

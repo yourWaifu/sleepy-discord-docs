@@ -6,7 +6,7 @@ Events are Discord Client member functions that can be overridden and are called
 
 ## Usage
 
-To use, you first need to set the intents to tell Discord to send them before running as this happens at the beginning of the connection. Next, you override onMessage member function with what you want to happen when the event occurs. This is based on [Discord API's gateway events](https://discord.com/developers/docs/topics/gateway#commands-and-events-gateway-events). All events are declared in the header file client.h in [the BaseDiscordClient class](/docs/reference/Classes/class_sleepy_discord_1_1_base_discord_client#function-onready).
+To use, you first need to set the intents to tell Discord to send them before running as this happens at the beginning of the connection. Next, you override onMessage member function with what you want to happen when the event occurs. This is based on [Discord API's gateway events](https://discord.com/developers/docs/topics/gateway#commands-and-events-gateway-events). All events are declared in the header file client.h in [the BaseDiscordClient class](api#class_sleepy_discord_1_1_base_discord_client).
 
 ```cpp
 class MyClientClass : public SleepyDiscord::DiscordClient {

@@ -12,19 +12,19 @@
     "clear": "docusaurus clear"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-beta.14",
-    "@docusaurus/preset-classic": "^2.0.0-beta.14",
-    "@mdx-js/react": "^1.6.21",
+    "@docusaurus/core": "^3.8.1",
+    "@docusaurus/preset-classic": "^3.8.1",
+    "@mdx-js/react": "^3.0.0",
     "@types/domhandler": "^2.4.2",
     "@types/ejs": "^3.0.5",
-    "@types/htmlparser2": "^3.10.3",
     "chalk": "^4.1.0",
-    "clsx": "^1.1.1",
+    "clsx": "^2.0.0",
     "ejs": "^3.1.6",
-    "htmlparser2": "^7.2.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-lazyload": "^3.2.0"
+    "htmlparser2": "^8.0.2",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-lazyload": "^3.2.1"
   },
   "browserslist": {
     "production": [
@@ -39,11 +39,10 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.0.0-beta.14",
-    "@tsconfig/docusaurus": "^1.0.4",
-    "@types/react": "^17.0.1",
-    "@types/react-helmet": "^6.1.0",
-    "@types/react-router-dom": "^5.1.7",
-    "typescript": "^4.5.4"
-  }
+    "@docusaurus/module-type-aliases": "^3.8.1",
+    "@docusaurus/tsconfig": "^3.8.1",
+    "@docusaurus/types": "^3.8.1",
+    "typescript": "~5.6.2"
+  },
+  "packageManager": "yarn@4.9.4"
 }

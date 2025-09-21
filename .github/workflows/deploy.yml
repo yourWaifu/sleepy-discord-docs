@@ -15,10 +15,10 @@ jobs:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: 16
+          node-version: 22
           cache: yarn
 
       - name: Add key to allow access to repository
@@ -47,18 +47,14 @@ jobs:
           echo "Move Doxygen Files"
           mkdir ../xml
           mv xml/* ../xml
-          echo "Download Doxybook2"
           cd ..
-          curl -o doxybook2.zip -LO "https://github.com/matusnovak/doxybook2/releases/download/v1.3.3/doxybook2-linux-amd64-v1.3.3.zip"
-          unzip -j "doxybook2.zip" "bin/doxybook2" -d "."
-          echo "Run Doxybook2"
           mkdir docs/reference
-          ./doxybook2 --input ./xml --output ./docs/reference --config ./doxybook.config.json --templates templates/
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build website
         run: |
+          npx moxygen -o docs/api.md ./xml/
           npx tsc --p reference-generator-tsconfig.json
           yarn build
 

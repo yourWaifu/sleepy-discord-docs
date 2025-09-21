@@ -2,7 +2,7 @@
 title: Discord Objects
 ---
 
-Most Objects from the library inherit the [SleepyDiscord::IdentifiableDiscordObject](reference/Classes/class_sleepy_discord_1_1_identifiable_discord_object) class. Most of the functionality of this base class is for internal use and mainly about parsing JSON into C++ objects and serialization.
+Most Objects from the library inherit the [SleepyDiscord::IdentifiableDiscordObject](api#class_sleepy_discord_1_1_identifiable_discord_object) class. Most of the functionality of this base class is for internal use and mainly about parsing JSON into C++ objects and serialization.
 
 ## Identifier
 

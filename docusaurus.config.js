@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   title: 'Sleepy Discord',
   tagline: 'C++ library for Discord',
   url: 'https://yourwaifu.dev/',
@@ -50,7 +50,7 @@ module.exports = {
             },
             {
               label: "Reference",
-              to: "docs/reference/index_classes"
+              to: "docs/api"
             }
           ]
         },
@@ -75,7 +75,7 @@ module.exports = {
           title: "Credits",
           items: [
             {
-              label: `Built in ${new Date().getFullYear()} with Docusaurus and Doxybook2`,
+              label: `Built in ${new Date().getFullYear()} with Docusaurus and Moxygen`,
               to: "https://docusaurus.io/"
             },
             {
@@ -95,11 +95,15 @@ module.exports = {
       disableSwitch: false,
       respectPrefersColorScheme: false,
     },
-    hideableSidebar: true,
-    algolia: {
+    docs: {
+      sidebar: {
+        hideable: true,
+      }
+    },
+/*    algolia: {
       apiKey: 'aa64c0f51f119280e7f07594c58fb334',
       indexName: 'sleepy-discord-docs',
-    }
+    }*/
   },
   presets: [
     [

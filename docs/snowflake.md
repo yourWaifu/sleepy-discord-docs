@@ -2,7 +2,7 @@
 title: Snowflakes and IDs
 ---
 
-Snowflakes very common type is used for identification. Defined as [SleepyDiscord::Snowflake](reference/Classes/struct_sleepy_discord_1_1_snowflake) in [snowflake.h](reference/Files/snowflake_8h#file-snowflake.h).
+Snowflakes very common type is used for identification. Defined as [SleepyDiscord::Snowflake](api#struct_sleepy_discord_1_1_snowflake).
 
 ## Unique
 
