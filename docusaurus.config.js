@@ -100,10 +100,11 @@ export default {
         hideable: true,
       }
     },
-/*    algolia: {
-      apiKey: 'aa64c0f51f119280e7f07594c58fb334',
+    algolia: {
+      appId: '90040JYL8N',
+      apiKey: 'bd8809ffd7d8bcd493929c7b85c5e19d',
       indexName: 'sleepy-discord-docs',
-    }*/
+    }
   },
   presets: [
     [
